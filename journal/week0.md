@@ -86,11 +86,3 @@ The company also wants to generally know what spend we expect to encounter and h
 
 
 ✅ Review all the questions of each pillars in the [Well Architected](https://aws.amazon.com/architecture/well-architected/) Tool 
-
-✅ Configured Cloud Trail 
-
-✅ Research the technical and [service limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) of specific services and how they could impact the technical path for technical flexibility
-
-✅ Open a support ticket and request a service limit
-
-✅ [Use EventBridge to hookup Health Dashboard](https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html#creating-event-bridge-events-rule-for-aws-health) to SNS and send notification when there is a service health issue
