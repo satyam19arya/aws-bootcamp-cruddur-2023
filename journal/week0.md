@@ -55,6 +55,12 @@ The company also wants to generally know what spend we expect to encounter and h
    export AWS_SECRET_ACCESS_KEY=""
    export AWS_DEFAULT_REGION=""
   ```
+  
+  To check env vars
+  ```
+  env | grep AWS_
+  ```
+  
   We will tell gitpod to remember these credentials if we relaunch our credentials
   ```
   gp env AWS_ACCESS_KEY_ID=""
