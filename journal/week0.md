@@ -63,7 +63,15 @@ The company also wants to generally know what spend we expect to encounter and h
   ```
   Check that AWS cli is working or not:
   ```
-  aws sts get-caller-iden tity
+  aws sts get-caller-identity
+  ```
+  Output
+  ```
+  {
+    "UserId": "",
+    "Account": "",
+    "Arn": ""
+  }
   ```
 
 ✅ [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA & IAM role
