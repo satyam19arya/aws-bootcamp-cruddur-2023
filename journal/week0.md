@@ -48,13 +48,28 @@ The company also wants to generally know what spend we expect to encounter and h
      extensions:
        - 42Crunch.vscode-openapi
    ```
-
-
-✅ [Installed AWS CLI Command Prompter](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-prompting.html)
+   
+   Set Env Vars
+   ```
+   export AWS_ACCESS_KEY_ID=""
+   export AWS_SECRET_ACCESS_KEY=""
+   export AWS_DEFAULT_REGION=""
+  ```
+  We will tell gitpod to remember these credentials if we relaunch our credentials
+  ```
+  gp env AWS_ACCESS_KEY_ID=""
+  gp env AWS_SECRET_ACCESS_KEY=""
+  gp env AWS_DEFAULT_REGION=""
+  ```
+  Check that AWS cli is working or not:
+  ```
+  aws sts get-caller-iden tity
+  ```
 
 ✅ [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA & IAM role
 
 ✅ [Set a billing alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics), [Set a AWS Budget](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-create.html), [Set Budget Notifications using CLI](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html)
+
 
 ✅ Review all the questions of each pillars in the [Well Architected](https://aws.amazon.com/architecture/well-architected/) Tool 
 
