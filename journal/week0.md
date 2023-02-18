@@ -87,7 +87,10 @@ The company also wants to generally know what spend we expect to encounter and h
 
 ✅ Review all the questions of each pillars in the [Well Architected](https://aws.amazon.com/architecture/well-architected/) Tool 
 
-✅ Recreated a architectural Diagram in Lucid
-   https://lucid.app/lucidchart/1387d175-9c11-43e7-90cf-5902992f11e4/edit?viewport_loc=-435%2C-410%2C2184%2C1088%2C0_0&invitationId=inv_ceeca159-d3ba-417a-97a0-792f8bfa68ae
+✅ Recreated a architectural Diagram in Lucid 
+    https://lucid.app/lucidchart/1387d175-9c11-43e7-90cf-5902992f11e4/edit?viewport_loc=-202%2C-410%2C1979%2C986%2C0_0&invitationId=inv_ceeca159-d3ba-417a-97a0-792f8bfa68ae
+    
+  <img width="749" alt="image" src="https://user-images.githubusercontent.com/77580311/219868178-0ed781ae-752a-4b56-817b-a61a68c7c9b5.png">
+
 
 ✅ Watched all spend and security considerations
