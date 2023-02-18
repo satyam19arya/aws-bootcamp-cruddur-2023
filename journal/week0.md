@@ -23,7 +23,7 @@ The company also wants to generally know what spend we expect to encounter and h
 ```
 
 ## Homework Challenges
-✅ Created a free AWS account, [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA & IAM role
+✅ Created a free AWS account, [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA, IAM role, & generated credentials 
 
 ✅ [[Installed AWS CLI Latest version]((https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)) on GitPod Desktop with [env variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)]
    ```
@@ -82,6 +82,7 @@ The company also wants to generally know what spend we expect to encounter and h
   ```
 
 ✅ [Set a billing alarm](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics), [Set a AWS Budget](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-create.html), [Set Budget Notifications using CLI](https://docs.aws.amazon.com/cli/latest/reference/budgets/create-budget.html)
+<img width="697" alt="image" src="https://user-images.githubusercontent.com/77580311/219863827-32624873-3762-42ad-b582-893355b20bb4.png">
 
 
 ✅ Review all the questions of each pillars in the [Well Architected](https://aws.amazon.com/architecture/well-architected/) Tool 
