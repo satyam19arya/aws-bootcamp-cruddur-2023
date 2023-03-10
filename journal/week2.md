@@ -57,6 +57,9 @@ Add the following Env Vars to backend-flask in docker compose
  OTEL_EXPORTER_OTLP_ENDPOINT: "https://api.honeycomb.io"
  OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
 ```
+On docker compose-up, we can see the data successfully sent to Honeycomb
+<img width="925" alt="image" src="https://user-images.githubusercontent.com/77580311/224369800-97f1f0c1-50d7-48d4-95ba-360aa251874b.png">
+
 
 # X-Ray
 Add this to the requirements.txt
