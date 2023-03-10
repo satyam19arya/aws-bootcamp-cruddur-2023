@@ -128,3 +128,20 @@ On docker compose-up, we can see the data successfully sent to X-ray
 <img width="956" alt="image" src="https://user-images.githubusercontent.com/77580311/224368600-a9b96d6a-bb41-4c09-9b79-89069d8d3183.png">
 
 <img width="863" alt="image" src="https://user-images.githubusercontent.com/77580311/224368942-825da269-54e8-411a-9a30-8b0c6c96b253.png">
+
+Add segments and subsegments to backend-flask/services/user_activities.py
+```
+ from aws_xray_sdk.core import xray_recorder
+
+ # xray 
+ segment = xray_recorder.begin_segment('user_activities')
+ 
+  subsegment = xray_recorder.begin_subsegment('mock-data')
+  # xray ---
+  dict = {
+     "now": now.isoformat(),
+     "results-size": len(model['data'])
+  }
+  subsegment.put_metadata('key', dict, 'namespace')
+```
+
