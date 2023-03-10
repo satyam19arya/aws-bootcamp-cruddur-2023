@@ -163,7 +163,8 @@ Gitpod was since it supports multiple Version Control Services (VCS).. The compa
   ```
   Run docker compose up and the Docker compose command starts and runs your entire app
   <img width="936" alt="image" src="https://user-images.githubusercontent.com/77580311/220022365-4bb172c2-c822-4080-a536-e9cefd97fdab.png">
-
+  
+  # Adding DynamoDB Local and Postgres
   
   
    
