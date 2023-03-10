@@ -58,7 +58,50 @@ Add the following Env Vars to backend-flask in docker compose
  OTEL_EXPORTER_OTLP_HEADERS: "x-honeycomb-team=${HONEYCOMB_API_KEY}"
 ```
 
+# X-Ray
+Add this to the requirements.txt
+```
+aws-xray-sdk
+```
+Run the following commands to install dependencies
+```
+cd backend-flask/
+pip install -r requirements.txt
+```
+Add to app.py
+```
+# x-ray
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
+
+XRayMiddleware(app, xray_recorder)
+```
+Add aws/json/xray.json
+```
+{
+    "SamplingRule": {
+        "RuleName": "Cruddur",
+        "ResourceARN": "*",
+        "Priority": 9000,
+        "FixedRate": 0.1,
+        "ReservoirSize": 5,
+        "ServiceName": "backend-flask",
+        "ServiceType": "*",
+        "Host": "*",
+        "HTTPMethod": "*",
+        "URLPath": "*",
+        "Version": 1
+    }
+}
+```
+Run the command
+```
+aws xray create-group --group-name "Cruddur" --filter-expression "service(\"backend-flask\")"
+aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
+```
 
 
 
