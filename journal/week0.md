@@ -15,13 +15,6 @@
 👉 Generating AWS credentials
 ```
 
-## Business Scenario
-```
-Your company has asked to put together a technical presentation on the proposed architecture that will be implemented so it can be reviewed by the fractional CTO.
-Your presentation must include a technical architectural diagram and breakdown of possible services used along with their justification.
-The company also wants to generally know what spend we expect to encounter and how we will ensure we keep our spending low.
-```
-
 ## Homework Challenges
 ✅ Created a free AWS account, [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA, IAM role, & generated credentials 
 
