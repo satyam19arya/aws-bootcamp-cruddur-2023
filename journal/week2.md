@@ -103,6 +103,25 @@ aws xray create-group --group-name "Cruddur" --filter-expression "service(\"back
 aws xray create-sampling-rule --cli-input-json file://aws/json/xray.json
 ```
 
+Add Daemon Service to Docker Compose
+```
+  xray-daemon:
+    image: "amazon/aws-xray-daemon"
+    environment:
+      AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
+      AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
+      AWS_REGION: "us-east-1"
+    command:
+      - "xray -o -b xray-daemon:2000"
+    ports:
+      - 2000:2000/udp
+```
+Add these two env vars to our backend-flask in our docker-compose.yml file
+```
+     AWS_XRAY_URL: "*4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}*"
+     AWS_XRAY_DAEMON_ADDRESS: "xray-daemon:2000"
+```
+On docker compose-up, we can see the data successfully sent to X-ray
+<img width="956" alt="image" src="https://user-images.githubusercontent.com/77580311/224368600-a9b96d6a-bb41-4c09-9b79-89069d8d3183.png">
 
-
-
+<img width="863" alt="image" src="https://user-images.githubusercontent.com/77580311/224368942-825da269-54e8-411a-9a30-8b0c6c96b253.png">
