@@ -165,6 +165,34 @@ Gitpod was since it supports multiple Version Control Services (VCS).. The compa
   <img width="936" alt="image" src="https://user-images.githubusercontent.com/77580311/220022365-4bb172c2-c822-4080-a536-e9cefd97fdab.png">
   
   # Adding DynamoDB Local and Postgres
+  Add following into our existing docker compose file:
+  ```
+      db:
+        image: postgres:13-alpine
+        restart: always
+        environment:
+          - POSTGRES_USER=postgres
+          - POSTGRES_PASSWORD=password
+        ports:
+          - '5432:5432'
+        volumes: 
+          - db:/var/lib/postgresql/data
+    volumes:
+      db:
+        driver: local
+  ```
+  ```
+  dynamodb-local:
+    user: root
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    image: "amazon/dynamodb-local:latest"
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./docker/dynamodb:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+ ```
   
   
    
