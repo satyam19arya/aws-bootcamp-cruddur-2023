@@ -16,7 +16,7 @@
 ```
 
 ## Homework Challenges
-✅ Created a free AWS account, [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA, IAM role, & generated credentials 
+✅ Created a free AWS account, [Destroy your root account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user_manage_delete-key), Set MFA, IAM role, and generated credentials 
 
 ✅ [[Installed AWS CLI Latest version]((https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)) on GitPod Desktop with [env variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)]
    ```
