@@ -176,9 +176,16 @@ def after_request(response):
    timestamp = strftime('[%Y-%b-%d %H:%M]')
    LOGGER.error('%s %s %s %s %s %s', timestamp, request.remote_addr, request.method, request.scheme, request.full_path, response.status)
    return response
+   
+# edit this
+@app.route("/api/activities/home", methods=['GET'])
+def data_home():
+  data = HomeActivities.run(Logger=LOGGER)
+  return data, 200
 ```
 Add this to home_activities.py
 ```
+def run(Logger):
 LOGGER.info('Hello Cloudwatch! from  /api/activities/home')
 ```
 Set the env var in your backend-flask for docker-compose.yml
@@ -187,7 +194,8 @@ Set the env var in your backend-flask for docker-compose.yml
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
-Wr are getting log streams data
+We are getting log streams data
+
 <img width="733" alt="image" src="https://user-images.githubusercontent.com/77580311/226023761-483a20dc-4baa-4546-9baf-7f24460af9a3.png">
 
 
