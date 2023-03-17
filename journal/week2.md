@@ -187,6 +187,9 @@ Set the env var in your backend-flask for docker-compose.yml
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
 ```
+Wr are getting log streams data
+<img width="733" alt="image" src="https://user-images.githubusercontent.com/77580311/226023761-483a20dc-4baa-4546-9baf-7f24460af9a3.png">
+
 
 
 
