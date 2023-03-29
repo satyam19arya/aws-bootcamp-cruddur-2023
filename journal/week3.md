@@ -79,7 +79,7 @@ We'll want to pass user to the following components:
 <DesktopSidebar user={user} />
 ```
 
-We'll rewrite DesktopNavigation.js so that it it conditionally shows links in the left hand column on whether you are logged in or not.
+We'll check DesktopNavigation.js so that it it conditionally shows links in the left hand column on whether you are logged in or not.
 Notice we are passing the user to ProfileInfo
 ```
 import './DesktopNavigation.css';
@@ -149,6 +149,30 @@ const signOut = async () => {
   }
 }
 ```
+We'll check DesktopSidebar.js so that it conditionally shows components in case you are logged in or not.
+# Signin Page
+```
+import { Auth } from 'aws-amplify';
+
+ const onsubmit = async (event) => {
+    setErrors('')
+    event.preventDefault();
+    Auth.signIn(email, password)
+    .then(user => {
+      console.log('user',user)
+      localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
+      window.location.href = "/"
+    })
+    .catch(error => { 
+      if (error.code == 'UserNotConfirmedException') {
+        window.location.href = "/confirm"
+      }
+      setErrors(error.message)
+    });
+    return false
+  }
+```
+
 
 
 
