@@ -39,6 +39,47 @@ Copy the following code in docker-compose.yml in frontend part
       REACT_APP_CLIENT_ID: ""
 ```
 
+# Conditionally show components based on logged in or logged out
+Inside HomeFeedPage.js
+```
+import { Auth } from 'aws-amplify';
+
+// set a state
+const [user, setUser] = React.useState(null);
+
+const checkAuth = async () => {
+    Auth.currentAuthenticatedUser({
+      // Optional, By default is false. 
+      // If set to true, this call will send a 
+      // request to Cognito to get the latest user data
+      bypassCache: false 
+    })
+    .then((user) => {
+      console.log('user',user);
+      return Auth.currentAuthenticatedUser()
+    }).then((cognito_user) => {
+        setUser({
+          display_name: cognito_user.attributes.name,
+          handle: cognito_user.attributes.preferred_username
+        })
+    })
+    .catch((err) => console.log(err));
+  };
+
+
+// check when the page loads if we are authenticated
+React.useEffect(()=>{
+  loadData();
+  checkAuth();
+}, [])
+```
+We'll want to pass user to the following components:
+```
+<DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
+<DesktopSidebar user={user} />
+```
+
+
 
 
 
