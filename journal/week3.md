@@ -79,6 +79,77 @@ We'll want to pass user to the following components:
 <DesktopSidebar user={user} />
 ```
 
+We'll rewrite DesktopNavigation.js so that it it conditionally shows links in the left hand column on whether you are logged in or not.
+Notice we are passing the user to ProfileInfo
+```
+import './DesktopNavigation.css';
+import {ReactComponent as Logo} from './svg/logo.svg';
+import DesktopNavigationLink from '../components/DesktopNavigationLink';
+import CrudButton from '../components/CrudButton';
+import ProfileInfo from '../components/ProfileInfo';
+
+export default function DesktopNavigation(props) {
+
+  let button;
+  let profile;
+  let notificationsLink;
+  let messagesLink;
+  let profileLink;
+  if (props.user) {
+    button = <CrudButton setPopped={props.setPopped} />;
+    profile = <ProfileInfo user={props.user} />;
+    notificationsLink = <DesktopNavigationLink 
+      url="/notifications" 
+      name="Notifications" 
+      handle="notifications" 
+      active={props.active} />;
+    messagesLink = <DesktopNavigationLink 
+      url="/messages"
+      name="Messages"
+      handle="messages" 
+      active={props.active} />
+    profileLink = <DesktopNavigationLink 
+      url="/@andrewbrown" 
+      name="Profile"
+      handle="profile"
+      active={props.active} />
+  }
+
+  return (
+    <nav>
+      <Logo className='logo' />
+      <DesktopNavigationLink url="/" 
+        name="Home"
+        handle="home"
+        active={props.active} />
+      {notificationsLink}
+      {messagesLink}
+      {profileLink}
+      <DesktopNavigationLink url="/#" 
+        name="More" 
+        handle="more"
+        active={props.active} />
+      {button}
+      {profile}
+    </nav>
+  );
+}
+```
+
+We'll update ProfileInfo.js
+```
+import { Auth } from 'aws-amplify';
+
+const signOut = async () => {
+  try {
+      await Auth.signOut({ global: true });
+      window.location.href = "/"
+  } catch (error) {
+      console.log('error signing out: ', error);
+  }
+}
+```
+
 
 
 
