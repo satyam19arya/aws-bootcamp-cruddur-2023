@@ -262,5 +262,29 @@ Now delete the user and let's create a sign-up page
     return false
   }
  ```
+# Recovery Page
+```
+import { Auth } from 'aws-amplify';
 
+  const onsubmit_send_code = async (event) => {
+    event.preventDefault();
+    setErrors('')
+    Auth.forgotPassword(username)
+    .then((data) => setFormState('confirm_code') )
+    .catch((err) => setErrors(err.message) );
+    return false
+  }
+  const onsubmit_confirm_code = async (event) => {
+    event.preventDefault();
+    setErrors('')
+    if (password == passwordAgain){
+      Auth.forgotPasswordSubmit(username, code, password)
+      .then((data) => setFormState('success'))
+      .catch((err) => setErrors(err.message) );
+    } else {
+      setCognitoErrors('Passwords do not match')
+    }
+    return false
+  }
+```
 
