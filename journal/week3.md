@@ -288,3 +288,13 @@ import { Auth } from 'aws-amplify';
   }
 ```
 
+## Authenticating Server Side
+Add in the HomeFeedPage.js
+```
+      const res = await fetch(backend_url, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`
+        },
+        method: "GET"
+      });
+```
