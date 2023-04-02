@@ -173,8 +173,25 @@ import { Auth } from 'aws-amplify';
   }
 ```
 
+Create a user in Cognito and to confirm the user, run the command:
+```
+aws cognito-idp admin-set-user-password --username satyam19arya --password Testing1234! --user-pool-id us-east-1_caIgbml5U --permanent
+```
+Then sign-in to your account using username and password:
+<img width="499" alt="image" src="https://user-images.githubusercontent.com/77580311/229343392-768c522b-1c50-4120-bfcd-6fe4d0562ea7.png">
 
+Sign-in successfull
+<img width="941" alt="image" src="https://user-images.githubusercontent.com/77580311/229343441-1a0b13a7-2e00-45a6-b4ea-82f968ef7a56.png">
 
+Now we edit user attributes and upload name and preferred_username
+<img width="658" alt="image" src="https://user-images.githubusercontent.com/77580311/229343872-e0ca1cda-d426-4311-ba69-8b8114ec2025.png">
+
+<img width="486" alt="image" src="https://user-images.githubusercontent.com/77580311/229343962-3e77b55c-c77d-4602-ac81-86db6326d005.png">
+
+Again sign-in to your account using username and password:
+<img width="212" alt="image" src="https://user-images.githubusercontent.com/77580311/229344031-7ecdac63-164b-4e9a-afce-d0812a27e781.png">
+
+Now delete the user and let's create a sign-up page
 
 
 
