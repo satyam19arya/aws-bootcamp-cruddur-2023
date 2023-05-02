@@ -1,20 +1,5 @@
 # Week 1 — App Containerization
 
-## Technical Tasks
-```
-👉 Create a new GitHub repo
-👉 Launch the repo within a Gitpod workspace
-👉 Configure Gitpod.yml configuration, eg. VSCode Extensions
-👉 Clone the frontend and backend repo
-👉 Explore the codebases
-👉 Ensure we can get the apps running locally
-👉 Write a Dockerfile for each app
-👉 Ensure we get the apps running via individual container
-👉 Create a docker-compose file
-👉 Ensure we can orchestrate multiple containers to run side by side
-👉 Mount directories so we can make changes while we code
-```
-
 ✅ Installed Docker extension for vs code
     https://code.visualstudio.com/docs/containers/overview
     
@@ -51,13 +36,16 @@
   - you should get the json data
   - to make JSON easy to read install JSON Formatter chrome extension
   
-  To build Container
   ```
   unset FRONTEND
   unset BACKEND
+  ```
+  To build image
+  ```
   cd ..
   docker build -t  backend-flask ./backend-flask
   ```
+  
   To check
   ```
   docker images
@@ -81,13 +69,8 @@
   docker logs CONTAINER_ID -f
   docker logs backend-flask -f
   ```
-  To delete an Image
-  ```
-  docker image rm backend-flask --force
-  ```
   
   ✅ Created a Dockerfile for frontend
-  We have to run NPM Install before building the container 
   ```
   cd frontend-react-js
   npm i
